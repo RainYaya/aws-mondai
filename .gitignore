@@ -5,9 +5,7 @@ out/
 
 # Data files (sensitive / large)
 data/raw/
-data/processed/
 data/translations/cache.json
-public/data/
 public/images/
 
 # Env
@@ -23,6 +21,9 @@ public/images/
 # OS
 .DS_Store
 Thumbs.db
+
+# No npm — use pnpm
+package-lock.json
 
 # Debug
 npm-debug.log*

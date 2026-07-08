@@ -105,6 +105,7 @@ export async function translateAll(
 
   for (let i = 0; i < uncached.length; i += MAX_BATCH_SIZE) {
     const batch = uncached.slice(i, i + MAX_BATCH_SIZE);
+    console.log(`  [translate] Batch ${Math.floor(i / MAX_BATCH_SIZE) + 1}/${Math.ceil(uncached.length / MAX_BATCH_SIZE)} (${batch.length} texts)...`);
     const translations = await translateBatch(batch, systemPrompt);
 
     for (let j = 0; j < batch.length; j++) {
@@ -116,6 +117,7 @@ export async function translateAll(
 
     // Persist cache after each batch so partial progress is preserved
     await saveCache();
+    console.log(`  [translate] ✅ Batch done — ${Object.keys(cache).length} total texts cached`);
   }
 
   return results;

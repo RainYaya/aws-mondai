@@ -7,12 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "predev": "tsx scripts/copy-data.ts",
-    "prebuild": "tsx scripts/copy-data.ts",
-    "copy-data": "tsx scripts/copy-data.ts",
-    "process": "tsx scripts/process.ts",
-    "translate": "tsx scripts/translate.ts",
-    "download-images": "tsx scripts/download-images.ts"
+    "predev": "tsx --env-file=.env scripts/copy-data.ts",
+    "prebuild": "tsx --env-file=.env scripts/copy-data.ts",
+    "copy-data": "tsx --env-file=.env scripts/copy-data.ts",
+    "process": "tsx --env-file=.env scripts/process.ts",
+    "translate": "tsx --env-file=.env scripts/translate.ts",
+    "download-images": "tsx --env-file=.env scripts/download-images.ts"
   },
   "dependencies": {
     "next": "^15.0.0",
