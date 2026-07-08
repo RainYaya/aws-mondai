@@ -67,6 +67,22 @@ export default async function ExamListPage({ params }: Props) {
         </p>
       </div>
 
+      {/* Quiz mode entry */}
+      <div className="mb-6 flex items-center justify-between rounded-xl border border-blue-100 bg-blue-50/50 p-4">
+        <div>
+          <p className="text-sm font-medium text-blue-900">刷题模式 / Quiz Mode</p>
+          <p className="text-xs text-blue-700">
+            Test your knowledge with interactive quizzes
+          </p>
+        </div>
+        <Link
+          href={`/${examId}/quiz`}
+          className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700"
+        >
+          Start Quiz / 开始答题
+        </Link>
+      </div>
+
       <QuestionListContent examId={examId} questions={questions} />
     </div>
   );

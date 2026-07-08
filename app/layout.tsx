@@ -27,9 +27,9 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col">
         <LanguageProvider>
           <NavBar />
-          <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-6">
-            {children}
-          </main>
+            <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-6">
+              {children}
+            </main>
           {/* Translation disclaimer at page bottom — PRD: "页面底部显示" */}
           <footer className="border-t border-gray-100 bg-amber-50/80 px-4 py-3 text-center text-xs text-amber-700">
             中文翻译由 AI 生成，仅供参考 / AI-generated Chinese translation for reference only
