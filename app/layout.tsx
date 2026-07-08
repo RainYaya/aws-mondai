@@ -7,6 +7,7 @@
 import type { Metadata } from "next";
 import { LanguageProvider } from "@/lib/language-context";
 import { NavBar } from "@/components/nav-bar";
+import { KeyboardShortcutsModal } from "@/components/keyboard-shortcuts-modal";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col">
         <LanguageProvider>
           <NavBar />
+          <KeyboardShortcutsModal />
             <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-6">
               {children}
             </main>

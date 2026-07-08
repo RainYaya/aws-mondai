@@ -12,6 +12,50 @@ import { useRouter } from "next/navigation";
 import { useQuiz } from "@/lib/quiz-context";
 import { getMistakes } from "@/lib/storage";
 
+/**
+ * Resume session modal — shown on mount when an unfinished session exists.
+ */
+function ResumeSessionModal({
+  examId,
+  onResume,
+  onStartNew,
+}: {
+  examId: string;
+  onResume: () => void;
+  onStartNew: () => void;
+}) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+      <div className="w-full max-w-md rounded-xl bg-white p-6 shadow-xl">
+        <h2 className="text-lg font-bold text-gray-900">
+          检测到未完成测验 / Unfinished Quiz
+        </h2>
+        <p className="mt-2 text-sm text-gray-600">
+          你有一个未完成的刷题会话，是否继续上次的进度？
+          <br />
+          You have an unfinished quiz session. Would you like to resume?
+        </p>
+        <div className="mt-6 flex gap-3">
+          <button
+            type="button"
+            onClick={onResume}
+            className="flex-1 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700"
+          >
+            继续 / Resume
+          </button>
+          <button
+            type="button"
+            onClick={onStartNew}
+            className="flex-1 rounded-lg border border-gray-200 px-4 py-2.5 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50"
+          >
+            重新开始 / Start New
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 interface Props {
   examId: string;
   totalQuestions: number;
@@ -21,10 +65,13 @@ const COUNT_OPTIONS = [10, 20, 50] as const;
 
 export function QuizConfigForm({ examId, totalQuestions }: Props) {
   const router = useRouter();
-  const { startSession, session } = useQuiz();
+  const { startSession, session, hydrated, clearSession } = useQuiz();
   const [count, setCount] = useState<number | "all">(10);
   const [mode, setMode] = useState<"original" | "random" | "mistakes">("original");
   const [starting, setStarting] = useState(false);
+  const [dismissedResume, setDismissedResume] = useState(false);
+
+  const hasUnfinished = hydrated && session !== null && session.completedAt === null && !dismissedResume;
 
   const effectiveCount = count === "all" ? totalQuestions : Math.min(count, totalQuestions);
   const mistakesCount = getMistakes(examId).length;
@@ -44,8 +91,25 @@ export function QuizConfigForm({ examId, totalQuestions }: Props) {
 
   const hasActiveSession = session !== null && session.completedAt === null;
 
+  function handleResume() {
+    router.push(`/${examId}/quiz/session`);
+  }
+
+  function handleStartNew() {
+    clearSession();
+    setDismissedResume(true);
+  }
+
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+    <>
+      {hasUnfinished && (
+        <ResumeSessionModal
+          examId={examId}
+          onResume={handleResume}
+          onStartNew={handleStartNew}
+        />
+      )}
+      <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
       {/* Question count */}
       <section className="mb-8">
         <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">
@@ -175,5 +239,6 @@ export function QuizConfigForm({ examId, totalQuestions }: Props) {
         </button>
       </div>
     </div>
+    </>
   );
 }

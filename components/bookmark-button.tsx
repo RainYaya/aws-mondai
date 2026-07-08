@@ -22,6 +22,20 @@ export function BookmarkButton({ examId, questionId }: Props) {
     setBookmarked(newState);
   }
 
+  // Listen for "b" key to toggle bookmark
+  useEffect(() => {
+    if (!hydrated) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (e.key === "b") {
+        e.preventDefault();
+        handleToggle();
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [hydrated, examId, questionId]);
+
   return (
     <button
       type="button"

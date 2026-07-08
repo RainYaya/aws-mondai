@@ -7,6 +7,7 @@ import { useQuiz } from '@/lib/quiz-context';
 import { useLanguage } from '@/lib/language-context';
 import { RichBlockRenderer } from '@/components/rich-block-renderer';
 import { blocksToText } from '@/lib/helpers';
+import { toggleBookmark, isBookmarked } from '@/lib/storage';
 
 interface Props {
   examId: string;
@@ -32,8 +33,14 @@ export function QuizSessionView({ examId, examName }: Props) {
     finishSession,
   } = useQuiz();
   const [multiSelect, setMultiSelect] = useState<string[]>([]);
+  const [bookmarked, setBookmarked] = useState(false);
 
-  useEffect(() => { setMultiSelect([]); }, [session?.currentIndex]);
+  useEffect(() => {
+    setMultiSelect([]);
+    if (currentQuestion) {
+      setBookmarked(isBookmarked(examId, currentQuestion.metadata.questionId));
+    }
+  }, [session?.currentIndex, examId, currentQuestion]);
 
   const didFinish = useRef(false);
   useEffect(() => {
@@ -65,10 +72,15 @@ export function QuizSessionView({ examId, examName }: Props) {
       if (e.key === 'ArrowLeft' || e.key === 'j') { e.preventDefault(); prevQuestion(); return; }
       if (e.key === 'ArrowRight' || e.key === 'k') { e.preventDefault(); nextQuestion(); return; }
       if (e.key === 'Enter' && isMultiple && multiSelect.length > 0 && !currentAnswer) { e.preventDefault(); submitAnswer(multiSelect); }
+      if (e.key === 'b') {
+        e.preventDefault();
+        const newState = toggleBookmark(examId, currentQuestion.metadata.questionId);
+        setBookmarked(newState);
+      }
     };
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
-  }, [currentQuestion, currentAnswer, multiSelect, submitAnswer, prevQuestion, nextQuestion]);
+  }, [currentQuestion, currentAnswer, multiSelect, submitAnswer, prevQuestion, nextQuestion, examId]);
 
   if (loading || !hydrated) return <div className="flex min-h-[50vh] items-center justify-center"><p className="text-gray-400">Loading session...</p></div>;
   if (error) return <div className="flex min-h-[50vh] flex-col items-center justify-center text-center"><p className="text-lg text-gray-500">Failed to load exam data.</p><p className="mt-1 text-sm text-gray-400">{error}</p><Link href={'/' + examId} className="mt-4 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">Back to browse</Link></div>;
@@ -92,6 +104,21 @@ export function QuizSessionView({ examId, examName }: Props) {
           <span className="inline-flex size-8 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-700">{idx + 1}</span>
           <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600">{isMultiple ? 'Multiple' : 'Single'}</span>
           <span className="text-xs text-gray-400">{idx + 1} / {total}</span>
+          <div className="flex-1" />
+          <button
+            type="button"
+            onClick={() => {
+              const newState = toggleBookmark(examId, currentQuestion.metadata.questionId);
+              setBookmarked(newState);
+            }}
+            className="inline-flex items-center gap-1 rounded-lg border px-2.5 py-1 text-xs font-medium transition-colors"
+            title={bookmarked ? "Remove bookmark" : "Add bookmark"}
+          >
+            <svg className="size-3.5" fill={bookmarked ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+            </svg>
+            {bookmarked ? "Bookmarked" : "Bookmark"}
+          </button>
         </div>
         <div className="mb-6">
           <RichBlockRenderer jaBlocks={q.content.questionBlocks} zhBlocks={q.translations?.zh.questionBlocks} lang={lang} className="text-base leading-relaxed md:text-lg" />
@@ -142,9 +169,12 @@ export function QuizSessionView({ examId, examName }: Props) {
         )}
       </div>
       <div className="flex items-center justify-between">
-        <button type="button" onClick={prevQuestion} disabled={idx === 0} className="flex items-center gap-1 rounded-lg border border-gray-200 px-4 py-2 text-sm text-gray-600 hover:border-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30"><svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>Prev</button>
-        <div className="flex gap-2">{isComplete && <Link href={'/' + examId + '/quiz/results'} className="rounded-lg bg-green-600 px-5 py-2 text-sm font-medium text-white shadow-sm hover:bg-green-700">View Results / 查看结果</Link>}</div>
-        <button type="button" onClick={nextQuestion} disabled={idx === total - 1} className="flex items-center gap-1 rounded-lg border border-gray-200 px-4 py-2 text-sm text-gray-600 hover:border-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30">Next<svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg></button>
+        <button type="button" onClick={prevQuestion} disabled={idx === 0} className="flex items-center gap-1 rounded-lg border border-gray-200 px-3 py-2 text-xs sm:px-4 sm:py-2 sm:text-sm text-gray-600 hover:border-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30"><svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg><span className="hidden sm:inline">Prev</span><span className="sm:hidden">←</span></button>
+        <div className="flex flex-col items-center gap-1">
+          {isComplete && <Link href={'/' + examId + '/quiz/results'} className="rounded-lg bg-green-600 px-4 py-2 text-xs font-medium text-white shadow-sm hover:bg-green-700 sm:px-5 sm:text-sm">View Results / 查看结果</Link>}
+          <span className="text-[10px] text-gray-400">? 键查看快捷键 / Press ? for shortcuts</span>
+        </div>
+        <button type="button" onClick={nextQuestion} disabled={idx === total - 1} className="flex items-center gap-1 rounded-lg border border-gray-200 px-3 py-2 text-xs sm:px-4 sm:py-2 sm:text-sm text-gray-600 hover:border-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30"><span className="hidden sm:inline">Next</span><span className="sm:hidden">→</span><svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg></button>
       </div>
     </div>
   );
@@ -152,15 +182,17 @@ export function QuizSessionView({ examId, examName }: Props) {
 
 function ProgressBar({ session, currentIndex, onJump }: { session: import('@/lib/quiz-engine').QuizSession; currentIndex: number; onJump: (i: number) => void }) {
   return (
-    <div className="flex flex-wrap gap-1.5">
-      {session.config.questionIds.map((qid, i) => {
-        const a = session.answers[qid];
-        let cls = 'size-7 rounded-lg text-xs font-medium transition-all border cursor-pointer flex items-center justify-center';
-        if (i === currentIndex) cls += ' ring-2 ring-blue-400 ring-offset-1';
-        if (a) { cls += a.correct ? ' border-green-500 bg-green-100 text-green-700' : ' border-red-500 bg-red-100 text-red-700'; }
-        else { cls += ' border-gray-200 bg-gray-50 text-gray-500 hover:bg-gray-100'; }
-        return <button key={qid} type="button" className={cls} onClick={() => onJump(i)} title={'#' + (i + 1)}>{i + 1}</button>;
-      })}
+    <div className="overflow-x-auto pb-1">
+      <div className="flex gap-1.5" style={{ minWidth: session.config.questionIds.length > 30 ? 'max-content' : undefined }}>
+        {session.config.questionIds.map((qid, i) => {
+          const a = session.answers[qid];
+          let cls = 'size-7 shrink-0 rounded-lg text-xs font-medium transition-all border cursor-pointer flex items-center justify-center';
+          if (i === currentIndex) cls += ' ring-2 ring-blue-400 ring-offset-1';
+          if (a) { cls += a.correct ? ' border-green-500 bg-green-100 text-green-700' : ' border-red-500 bg-red-100 text-red-700'; }
+          else { cls += ' border-gray-200 bg-gray-50 text-gray-500 hover:bg-gray-100'; }
+          return <button key={qid} type="button" className={cls} onClick={() => onJump(i)} title={'#' + (i + 1)}>{i + 1}</button>;
+        })}
+      </div>
     </div>
   );
 }
