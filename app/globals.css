@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/*
+ * app/globals.css
+ *
+ * Tailwind v4 global styles for AWS Mondai.
+ */
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent layout shift from sticky nav */
+body {
+  @apply bg-gray-50 text-gray-900 antialiased;
+}
