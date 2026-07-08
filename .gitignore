@@ -1,0 +1,27 @@
+node_modules/
+.next/
+out/
+
+# Data files (sensitive / large)
+data/raw/
+data/processed/
+data/translations/cache.json
+public/data/
+public/images/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Debug
+npm-debug.log*

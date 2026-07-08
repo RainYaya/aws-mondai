@@ -1,0 +1,2044 @@
+[
+  {
+    "schemaVersion": "1.1",
+    "source": {
+      "site": "Ping-t",
+      "url": "https://mondai.ping-t.com/question_subjects/76/question_sessions/44217830/progressing_questions/673792933/edit?no_selection=false",
+      "title": "Ping-t",
+      "capturedAt": "2026-07-08T11:36:26.249Z"
+    },
+    "metadata": {
+      "course": "AWS クラウドプラクティショナー(CLF-C02)",
+      "mode": "自由演習",
+      "progress": "",
+      "questionId": "91390",
+      "questionType": "single"
+    },
+    "content": {
+      "questionBlocks": [
+        {
+          "type": "text",
+          "text": "ある企業は、VPC内のEC2インスタンスからVPC外のAWSのサービスへ安全に接続したいと考えている。その際、VPC内のトラフィックを公共のインターネットに公開しない形で接続する必要がある。これらの要件を満たすAWSのサービスまたは機能はどれか。"
+        }
+      ],
+      "questionText": "ある企業は、VPC内のEC2インスタンスからVPC外のAWSのサービスへ安全に接続したいと考えている。その際、VPC内のトラフィックを公共のインターネットに公開しない形で接続する必要がある。これらの要件を満たすAWSのサービスまたは機能はどれか。",
+      "choices": [
+        {
+          "no": 1,
+          "inputType": "radio",
+          "value": "444648",
+          "correct": false,
+          "checked": false,
+          "blocks": [
+            {
+              "type": "text",
+              "text": "インターネットゲートウェイ"
+            }
+          ],
+          "text": "インターネットゲートウェイ"
+        },
+        {
+          "no": 2,
+          "inputType": "radio",
+          "value": "444647",
+          "correct": true,
+          "checked": false,
+          "blocks": [
+            {
+              "type": "text",
+              "text": "PrivateLink"
+            }
+          ],
+          "text": "PrivateLink"
+        },
+        {
+          "no": 3,
+          "inputType": "radio",
+          "value": "444649",
+          "correct": false,
+          "checked": false,
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Direct Connect"
+            }
+          ],
+          "text": "Direct Connect"
+        },
+        {
+          "no": 4,
+          "inputType": "radio",
+          "value": "444650",
+          "correct": false,
+          "checked": false,
+          "blocks": [
+            {
+              "type": "text",
+              "text": "VPCピアリング"
+            }
+          ],
+          "text": "VPCピアリング"
+        }
+      ],
+      "correctAnswerBlocks": [
+        {
+          "type": "text",
+          "text": "PrivateLink"
+        }
+      ],
+      "correctAnswerText": "PrivateLink",
+      "explanationBlocks": [
+        {
+          "type": "text",
+          "text": "VPC内のAWSリソースからS3やDynamoDBなどのVPC外AWSサービスへアクセスする場合、通常はインターネットゲートウェイを経由して通信します。VPCエンドポイントは、セキュリティ上の制約でインターネットとの通信が制限されているプライベートサブネット内のAWSリソースから、インターネットゲートウェイを経由せずにVPC外のAWSサービスへアクセス可能にする機能です。"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "VPCエンドポイントのうちPrivateLinkは、CloudWatch LogsやSecrets Manager(※)などの多数のVPC外AWSサービスで利用できます。接続元リソースがあるサブネットにプライベートIPアドレスを持つENIを作成し、ENIと接続先サービスをリンクしてアクセスします。"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "(※)CloudWatch Logs：AWSサービスのログを収集し、一元管理するサービス"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "(※)Secrets Manager：データベースなどにアクセスする際の認証情報を管理するサービス"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "[PrivateLinkでCloudWatch LogsやSecrets Managerにアクセスする時のイメージ]"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "image",
+          "src": "/static/question_subjects/76/question_images/140130.jpg",
+          "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/140130.jpg",
+          "dataSourceId": "140130",
+          "alt": "",
+          "className": "js-image"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "したがって、正解は"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "・PrivateLink"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "です。"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "それ以外の選択肢は、以下の通りです。"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "・インターネットゲートウェイ"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "VPC内のAWSリソースとインターネットを接続する機能ですので、誤りです。"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "・Direct Connect"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "オンプレミスなどのユーザー環境からAWSへ、専用回線を使ってセキュアに接続するサービスですので、誤りです。"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "・VPCピアリング"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "VPC間のルーティングを可能にする機能ですので、誤りです。"
+        }
+      ],
+      "explanationText": "VPC内のAWSリソースからS3やDynamoDBなどのVPC外AWSサービスへアクセスする場合、通常はインターネットゲートウェイを経由して通信します。VPCエンドポイントは、セキュリティ上の制約でインターネットとの通信が制限されているプライベートサブネット内のAWSリソースから、インターネットゲートウェイを経由せずにVPC外のAWSサービスへアクセス可能にする機能です。\n\nVPCエンドポイントのうちPrivateLinkは、CloudWatch LogsやSecrets Manager(※)などの多数のVPC外AWSサービスで利用できます。接続元リソースがあるサブネットにプライベートIPアドレスを持つENIを作成し、ENIと接続先サービスをリンクしてアクセスします。\n(※)CloudWatch Logs：AWSサービスのログを収集し、一元管理するサービス\n(※)Secrets Manager：データベースなどにアクセスする際の認証情報を管理するサービス\n\n[PrivateLinkでCloudWatch LogsやSecrets Managerにアクセスする時のイメージ]\n[IMAGE:/static/question_subjects/76/question_images/140130.jpg]\n\nしたがって、正解は\n・PrivateLink\nです。\n\nそれ以外の選択肢は、以下の通りです。\n\n・インターネットゲートウェイ\nVPC内のAWSリソースとインターネットを接続する機能ですので、誤りです。\n\n・Direct Connect\nオンプレミスなどのユーザー環境からAWSへ、専用回線を使ってセキュアに接続するサービスですので、誤りです。\n\n・VPCピアリング\nVPC間のルーティングを可能にする機能ですので、誤りです。",
+      "studyTextSections": [
+        {
+          "title": "Amazon VPC",
+          "targetId": "study_text_collapse_question_reference_2566",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "【Amazon VPC（Virtual Private Cloud）】"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "Amazon VPC（Virtual Private Cloud）は、AWS上で動作する仮想ネットワーク環境を提供するサービスです。VPCでネットワーク空間を作成し、その中にインスタンスなどのAWSリソースを配置します。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPCは1つのリージョン内に複数作成できます。そして、1つのVPCはリージョン内にある全てのAZにまたがります。VPCで作成されるネットワーク空間は、各VPCが独立しているプライベートネットワークです。そのため、デフォルトでは他のVPCやインターネットと通信できません。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[VPCのイメージ]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27962.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27962.jpg",
+              "dataSourceId": "27962",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "【サブネット】"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "サブネットとは、VPC内のネットワーク空間を論理的に分割したものです。各サブネットは、1つのAZに属し、1つのAZ内に複数のサブネットを作成できます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "サブネットのうち、インターネットゲートウェイへのルーティング設定がある場合は「パブリックサブネット」、ない場合は「プライベートサブネット」といいます。パブリックサブネットには、インターネットから直接アクセスされるAWSリソースを配置します。一方、プライベートサブネットには、インターネットから直接アクセスされないAWSリソースを配置します。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[サブネットのイメージ]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27963.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27963.jpg",
+              "dataSourceId": "27963",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "【IPアドレスの種類】"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "○プライベートIPアドレス"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "プライベートIPアドレスはVPC内でのみ有効なIPアドレスで、VPC内の他のインスタンスや、VPCと接続しているネットワークと通信するために使用します。VPC内のEC2インスタンスなどのAWSリソースには、パブリックサブネット・プライベートサブネットに関係なく、すべてプライベートIPアドレスが自動で割り当てられます。プライベートIPアドレスは、AWSリソースを停止・起動した後も同一のIPアドレスが利用されます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27964.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27964.jpg",
+              "dataSourceId": "27964",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "○パブリックIPアドレス"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "パブリックIPアドレスはインターネット上で一意のIPアドレスです。パブリックIPアドレスを割り当てられたAWSリソースは、インターネットなどVPC外のネットワークと通信できるようになります。パブリックIPアドレスは、パブリックIPの自動割り当てが有効なパブリックサブネットにインスタンスを作成するときに自動で割り当てられます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "Elastic IPアドレス（後述）ではないパブリックIPアドレスは、AWSリソースが停止する時にIPアドレスが解放（AWSに返却）され、AWSリソースが起動する時に新規のIPアドレスが割り当てられます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27965.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27965.jpg",
+              "dataSourceId": "27965",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "○Elastic IPアドレス"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "Elastic IPアドレスは、インターネットと通信可能な固定のパブリックIPアドレスです。Elastic IPアドレスはAWSアカウントと紐づいており、AWSリソースに手動で割り当てます。割り当てたElastic IPアドレスは、AWSリソースが停止・起動してもIPアドレスが変わりません。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27966.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27966.jpg",
+              "dataSourceId": "27966",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "Elastic IPアドレスは割り当てたAWSリソースが終了しても同一のIPアドレスが保有されるので、利用料金が発生し続けます。また、保有しているElastic IPアドレスを使用して、同一のIPアドレスを別のAWSリソースに再び割り当てられます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27967.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27967.jpg",
+              "dataSourceId": "27967",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "【ルートテーブル】"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPC内での通信において、どのネットワークへデータを転送するかを定義する機能です。ルートテーブルに従って、送信先ごとに指定したターゲットへデータを転送することを「ルーティング」といいます。VPC内の各サブネットは、1つのルートテーブルを関連付けることができます。ルートテーブルが関連付けられていないサブネットは、VPC全体に適用される「メインルートテーブル」に従ってルーティングが行われます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "【VPC内のファイアウォール】"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPCにはネットワークアクセスを制御する機能として「セキュリティグループ」「ネットワークACL」「AWS Network Firewall」があります。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "■セキュリティグループ"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPC内において、インスタンスなどのリソース単位でネットワークアクセスを制御するファイアウォールです。設定は許可ルールのみ指定し、拒否ルールは指定できません。デフォルトの設定では、すべてのインバウンド通信（外部から内部への通信）を拒否、すべてのアウトバウンド通信（内部から外部への通信）を許可しているので、インスタンスへのインバウンド通信には許可ルールを設定する必要があります。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "セキュリティグループは通信の状態を管理する「ステートフル」なファイアウォールです。インバウンドまたはアウトバウンドで許可されている通信に関連する後続の通信（リクエストに対応するレスポンスなど）は、明示的に許可設定をしなくても通信が許可されます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "■ネットワークACL"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPC内において、サブネット単位でネットワークアクセスを制御するファイアウォールです。IPアドレスを元に許可ルールと拒否ルールの両方を設定可能です。ルールはユーザーが付与したルール番号の順番に評価され、ルール間で矛盾がある場合はルール番号が小さい数字のルールが適用されます。デフォルトの設定ではインバウンド通信（外部から内部への通信）、アウトバウンド通信（内部から外部への通信）ともにすべての通信が許可されています。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "ネットワークACLは通信の状態を管理しない「ステートレス」なファイアウォールです。通信の関連を考慮しないので、インバウンド/アウトバウンド両方に許可設定が必要になります。例えば、インバウンドで特定のリクエストの受付を許可していても、アウトバウンドでレスポンスの送信を許可していない場合は正常に通信できません。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[セキュリティグループとネットワークACLの比較表]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27972.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27972.jpg",
+              "dataSourceId": "27972",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[セキュリティグループとネットワークACLのイメージ図]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27971.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27971.jpg",
+              "dataSourceId": "27971",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "■AWS Network Firewall"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "AWS Network Firewallは、VPC向けのファイアウォール機能を提供するマネージドサービスです。侵入防止システム（IPS）やドメイン名によるトラフィックのフィルタリングなど、セキュリティグループやネットワークACLよりも高度な機能を備えています。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "Network Firewallは、VPC内のアウトバウンド及びインバウンド両方のトラフィックを検査できます。インターネット上の特定のドメイン名を含むURLへのアクセスのみを許可したり、特定の送信元からのトラフィック以外は全てブロックするなど、きめ細かな通信の制御が可能です。セキュリティグループとネットワークACLがシンプルな機能の無料サービスである一方、Network Firewallは高度な設定が可能な有料サービスです。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "Network Firewallは3つのコンポーネントから構成されます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "○ファイアウォール"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "Network Firewallの本体となるコンポーネントです。ファイアウォールポリシーに基づきネットワークトラフィックの監視及び制御を行います。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPCのサブネットに紐づけることで、指定したサブネット内にファイアウォールエンドポイントが作成されます。ネットワークトラフィックはこのエンドポイントを通じてファイアウォールとやりとりをするため、ルートテーブルの設定で、このエンドポイントにトラフィックをルーティングする必要があります。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "○ファイアウォールポリシー"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "ルールグループをまとめたものです。ファイアウォールに紐づけることで、実際の動作を定義します。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "○ルールグループ"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "詳細なフィルタリングのルールをまとめたものです。ファイアウォールポリシーに紐づけて使用します。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[プライベートサブネットからインターネットへの通信を制御する場合のイメージ]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/28157.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28157.jpg",
+              "dataSourceId": "28157",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "プライベートサブネットのルートテーブルでファイアウォールエンドポイントにルーティングし、ファイアウォールサブネットのルートテーブルでNATゲートウェイにルーティングすることで、プライベートサブネットとインターネット間の通信をNetwork Firewallで制御できます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "【ENI（Elastic Network Interface）】"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "AWSリソースのネットワークインターフェイスです。オンプレミス環境におけるNIC（Network Interface Card）と同じ役割を持ち、VPC内のEC2インスタンスやNATゲートウェイなどに割り当てて利用します。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "【VPCフローログ】"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPC内のENIに流れるネットワークトラフィック情報を出力する機能です。VPCフローログには、送信元/送信先IPアドレス、送信元/送信先ポート番号、プロトコル番号、通信の許可/拒否の結果などが記録されます。VPCフローログを利用することでVPC内のリソースが受信した不審な通信や、VPC内のリソースから発信された不要な通信の発見に繋がります。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27970.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27970.jpg",
+              "dataSourceId": "27970",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "【VPCと外部ネットワークの接続】"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPCは、インターネットやAWSのサービス、他のVPCなど、VPCの外にある接続先と通信できます。通信先と、インターネット経由かプライベート経路かといった要件に応じて、適切な接続方式を選択します。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "■AWSからインターネットへの接続"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "○インターネットゲートウェイ"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPC内のAWSリソースとインターネットを接続する機能です。インターネットゲートウェイへのルーティングが設定されたサブネットは、パブリックサブネットになります。パブリックサブネットでは、インターネットとサブネット両方からの接続開始要求を通します。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[インターネットゲートウェイのイメージ]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27968.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27968.jpg",
+              "dataSourceId": "27968",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "○NATゲートウェイ"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "プライベートサブネットからインターネットへの通信を可能にする機能です。NATゲートウェイはプライベートサブネット内リソースからインターネットへの接続開始要求は通しますが、インターネットからプライベートサブネット内リソースへの接続開始要求は通しません。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[NATゲートウェイのイメージ]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27969.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27969.jpg",
+              "dataSourceId": "27969",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "■VPCエンドポイント（AWSサービスへのプライベート接続）"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPC内のAWSリソースからS3やDynamoDBなどのVPC外AWSサービスへアクセスする場合、通常はインターネットゲートウェイを経由して通信します。VPCエンドポイントは、セキュリティ上の制約でインターネットとの通信が制限されているプライベートサブネット内のAWSリソースから、インターネットゲートウェイを経由せずにVPC外のAWSサービスへアクセス可能にする機能です。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPCエンドポイントには、S3やDynamoDB向けのゲートウェイ型と、多数のサービスに対応したインターフェイス型（AWS PrivateLink）がありますが、ここではインターフェイス型の説明をします。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "○AWS PrivateLink（インターフェイス型）"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "CloudWatch LogsやSecrets Manager(※)などの多数のVPC外AWSサービスで利用できます。接続元リソースがあるサブネットにプライベートIPアドレスを持つENIを作成し、ENIと接続先サービスをリンクしてアクセスします。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "(※)CloudWatch Logs：AWSサービスのログを収集し、一元管理するサービス"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "(※)Secrets Manager：データベースなどにアクセスする際の認証情報を管理するサービス"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[PrivateLinkでCloudWatch LogsやSecrets Managerにアクセスする時のイメージ]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/140130.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/140130.jpg",
+              "dataSourceId": "140130",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "■VPC間接続"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPCで作成されるネットワーク空間は、各VPCが独立しているプライベートネットワークです。そのため、デフォルトでは他のVPCと通信できません。他のVPCと接続するには「VPCピアリング」または「AWS Transit Gateway」を利用します。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "○VPCピアリング"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPC同士を1対1で接続する機能です。同一アカウントのVPC同士や他のAWSアカウントのVPC、異なるリージョンのVPCでも、同一のプライベートネットワーク内に存在しているかのように相互に通信できます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[VPCピアリングのイメージ]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27973.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27973.jpg",
+              "dataSourceId": "27973",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "○AWS Transit Gateway"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "複数のVPCや複数のオンプレミスネットワークを相互に接続するハブ機能を持つサービスです。VPCピアリングはVPC同士を1対1で接続するサービスなのに対し、Transit Gatewayは複数のVPCを1つのハブで相互に接続できるのでネットワーク経路を簡素化できます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[VPCピアリングを使用したVPC同士の接続]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27974.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27974.jpg",
+              "dataSourceId": "27974",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[Transit Gatewayを使用したVPC同士の接続]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27975.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27975.jpg",
+              "dataSourceId": "27975",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "Transit GatewayはVPC間の他に、AWS Direct ConnectやAWS VPNで接続されたオンプレミスネットワークとも接続できます。AWS Direct ConnectとAWS VPNはともに、オンプレミスなどAWS外のネットワークとAWS内のネットワークをセキュアに接続するサービスです。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "※以降の項目は試験範囲では無いため、読み飛ばすことも可能です。ただし、AWSを実際に操作する際（ハンズオンなど）には必要な知識ですので記載いたします。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "【CIDR（Classless Inter-Domain Routing）ブロック】"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "CIDR（Classless Inter-Domain Routing）とは、ネットワークの範囲を指定するIPアドレスの設定方法のことです。CIDRはIPアドレスを「172.16.0.100/24」のように表記します。この「/24」がプレフィックス長を示し、IPアドレスとプレフィックス長によって所属するネットワークが決まります。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "プレフィックス長が「/24」の場合、IPアドレスを2進数表記にした際に左から24ビット目までの範囲がネットワークアドレスを表します。このネットワークアドレスが一致するIPアドレスの集合を「CIDRブロック」と呼びます。CIDRブロックを使用することで、IPアドレス空間を効率的に分割し、IPアドレスの割り当てやルーティングを容易に管理することができます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27976.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27976.jpg",
+              "dataSourceId": "27976",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[CIDRブロックのイメージ]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27977.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27977.jpg",
+              "dataSourceId": "27977",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPCを利用するには最初にVPCを作成し、その後にサブネットを作成します。VPCとサブネットの作成時に、それぞれネットワークアドレスの範囲をCIDRブロックで指定します。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPCの中にサブネットが存在するので、サブネットのCIDRブロックはVPCのCIDRブロックの範囲内で作成する必要があります。（例：VPCのCIDRブロックが172.16.0.0/18の場合、サブネットに10.0.0.0/22や172.16.0.0/16のCIDRブロックは作成できない。）"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27978.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27978.jpg",
+              "dataSourceId": "27978",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[CIDRブロックの設定例]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/27979.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27979.jpg",
+              "dataSourceId": "27979",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPCとサブネットそれぞれに指定したCIDRブロックによって、VPC内のサブネット数と1つのサブネット当たりに利用できるIPアドレス数が決まります。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPCでは各サブネットのCIDRブロック内で、最初の4つのIPアドレスと最後のIPアドレスの合計5つのIPアドレスが予約されています。予約されたIPアドレスはAWSリソースに割り当てることができないため、利用できないIPアドレス分を考慮してCIDRブロックを指定する必要があります。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "CIDRブロックが「172.16.0.0/24」の予約IPアドレス（利用できないIPアドレス）"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "・172.16.0.0 … ネットワークアドレス"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "・172.16.0.1 … VPCルーター用"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "・172.16.0.2 … DNSサーバー用"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "・172.16.0.3 … 将来の利用のためにAWSで予約"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "・172.16.0.255… ネットワークブロードキャストアドレス"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "CIDRブロックが「172.16.0.0/18」のVPCに「172.16.0.0/24」のサブネットを作成した場合、VPC内のサブネット数と1サブネット当たりの利用可能なIPアドレス数は、以下のようになります。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "・サブネット数 = 2^(サブネットのプレフィックス長 - VPCのプレフィックス長) = 2^(24-18) = 64"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "・利用可能なIPアドレス数 = 2^(32 - サブネットのプレフィックス長)-5 = 2^(32-24)-5 = 251"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "VPCではCIDRブロックのプレフィックス長を/16から/28の間で指定します。AWSは次のプライベートIPv4アドレス範囲から、CIDRブロックを指定することを推奨しています。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "・10.0.0.0 ～ 10.255.255.255"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "・172.16.0.0 ～ 172.31.255.255"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "・192.168.0.0 ～ 192.168.255.255"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "link",
+              "text": "上に戻る",
+              "href": "#study_text_question_reference_2566",
+              "absoluteHref": "https://mondai.ping-t.com/#study_text_question_reference_2566"
+            }
+          ]
+        }
+      ],
+      "referenceUrls": [
+        {
+          "title": "",
+          "url": "https://aws.amazon.com/jp/privatelink/",
+          "absoluteUrl": "https://aws.amazon.com/jp/privatelink/"
+        },
+        {
+          "title": "AWS PrivateLink「データをインターネットに公開することなく、VPC と AWS のサービス間の接続を確立する」",
+          "url": "https://aws.amazon.com/jp/privatelink/",
+          "absoluteUrl": "https://aws.amazon.com/jp/privatelink/"
+        },
+        {
+          "title": "",
+          "url": "https://docs.aws.amazon.com/ja_jp/vpc/latest/privatelink/what-is-privatelink.html",
+          "absoluteUrl": "https://docs.aws.amazon.com/ja_jp/vpc/latest/privatelink/what-is-privatelink.html"
+        },
+        {
+          "title": "Amazon Virtual Private Cloud AWS PrivateLink「AWS PrivateLink とは」",
+          "url": "https://docs.aws.amazon.com/ja_jp/vpc/latest/privatelink/what-is-privatelink.html",
+          "absoluteUrl": "https://docs.aws.amazon.com/ja_jp/vpc/latest/privatelink/what-is-privatelink.html"
+        },
+        {
+          "title": "もどる (p)",
+          "url": "/question_subjects/76/question_sessions/44217830/progressing_questions/673792932/edit",
+          "absoluteUrl": "https://mondai.ping-t.com/question_subjects/76/question_sessions/44217830/progressing_questions/673792932/edit"
+        }
+      ]
+    },
+    "assets": [
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/140130.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/140130.jpg",
+        "dataSourceId": "140130",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27962.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27962.jpg",
+        "dataSourceId": "27962",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27963.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27963.jpg",
+        "dataSourceId": "27963",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27964.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27964.jpg",
+        "dataSourceId": "27964",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27965.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27965.jpg",
+        "dataSourceId": "27965",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27966.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27966.jpg",
+        "dataSourceId": "27966",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27967.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27967.jpg",
+        "dataSourceId": "27967",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27972.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27972.jpg",
+        "dataSourceId": "27972",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27971.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27971.jpg",
+        "dataSourceId": "27971",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/28157.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28157.jpg",
+        "dataSourceId": "28157",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27970.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27970.jpg",
+        "dataSourceId": "27970",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27968.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27968.jpg",
+        "dataSourceId": "27968",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27969.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27969.jpg",
+        "dataSourceId": "27969",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27973.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27973.jpg",
+        "dataSourceId": "27973",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27974.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27974.jpg",
+        "dataSourceId": "27974",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27975.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27975.jpg",
+        "dataSourceId": "27975",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27976.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27976.jpg",
+        "dataSourceId": "27976",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27977.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27977.jpg",
+        "dataSourceId": "27977",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27978.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27978.jpg",
+        "dataSourceId": "27978",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/27979.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/27979.jpg",
+        "dataSourceId": "27979",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "schemaVersion": "1.1",
+    "source": {
+      "site": "Ping-t",
+      "url": "https://mondai.ping-t.com/question_subjects/76/question_sessions/44217830/progressing_questions/673792934/edit?no_selection=false",
+      "title": "Ping-t",
+      "capturedAt": "2026-07-08T11:36:29.935Z"
+    },
+    "metadata": {
+      "course": "AWS クラウドプラクティショナー(CLF-C02)",
+      "mode": "自由演習",
+      "progress": "",
+      "questionId": "97017",
+      "questionType": "single"
+    },
+    "content": {
+      "questionBlocks": [
+        {
+          "type": "text",
+          "text": "AWS Cost Explorerの活用によって実現できることはどれか。"
+        }
+      ],
+      "questionText": "AWS Cost Explorerの活用によって実現できることはどれか。",
+      "choices": [
+        {
+          "no": 1,
+          "inputType": "radio",
+          "value": "473666",
+          "correct": false,
+          "checked": false,
+          "blocks": [
+            {
+              "type": "text",
+              "text": "マイクロサービスアーキテクチャ"
+            }
+          ],
+          "text": "マイクロサービスアーキテクチャ"
+        },
+        {
+          "no": 2,
+          "inputType": "radio",
+          "value": "473668",
+          "correct": false,
+          "checked": false,
+          "blocks": [
+            {
+              "type": "text",
+              "text": "オペレーショナルエクセレンス"
+            }
+          ],
+          "text": "オペレーショナルエクセレンス"
+        },
+        {
+          "no": 3,
+          "inputType": "radio",
+          "value": "473665",
+          "correct": true,
+          "checked": false,
+          "blocks": [
+            {
+              "type": "text",
+              "text": "適切なサイジング"
+            }
+          ],
+          "text": "適切なサイジング"
+        },
+        {
+          "no": 4,
+          "inputType": "radio",
+          "value": "473667",
+          "correct": false,
+          "checked": false,
+          "blocks": [
+            {
+              "type": "text",
+              "text": "ビジネスの俊敏性"
+            }
+          ],
+          "text": "ビジネスの俊敏性"
+        }
+      ],
+      "correctAnswerBlocks": [
+        {
+          "type": "text",
+          "text": "適切なサイジング"
+        }
+      ],
+      "correctAnswerText": "適切なサイジング",
+      "explanationBlocks": [
+        {
+          "type": "text",
+          "text": "AWS Cost Explorerは、AWSリソースの使用量やコストをグラフで視覚化し、データを詳細に分析できるサービスです。例えば、EC2やRDSなどのサービスごとに使用状況やコストを詳細に分析し、使用量の変化を時間軸で分析したり、コスト増加の原因を特定するグラフを作成することが可能です。"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "AWS Cost Explorerを活用することで、EC2インスタンスが大きすぎないか、使用率が低いリソースがないか、コスト最適化できる箇所はないか等を確認し、ワークロードに対して適切なサイズへ調整する「適切なサイジング」を実現できます。"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "したがって、正解は"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "・適切なサイジング"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "です。"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "その他の選択肢については、以下のとおりです。"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "・マイクロサービスアーキテクチャ"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "マイクロサービスアーキテクチャは、システムを複数の小さな独立したコンポーネントに分割して設計する手法です。Cost Explorerの機能とは無関係なので、誤りです。"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "・ビジネスの俊敏性"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "ビジネスの俊敏性とは、変化する状況に即座に適応し、競争力を維持・強化する能力を指します。AWS利用全般のメリットであり、Cost Explorer固有のことではないので、誤りです。"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "・オペレーショナルエクセレンス"
+        },
+        {
+          "type": "linebreak"
+        },
+        {
+          "type": "text",
+          "text": "「運用上の優秀性（オペレーショナルエクセレンス）」は、Well-Architected Frameworkの6本の柱のうちの1つで、運用状況を把握し、業務手順を改善しながら、効率的にシステムを運用するためのガイドラインです。Cost Explorer単体で直接実現できることではないので、誤りです。"
+        }
+      ],
+      "explanationText": "AWS Cost Explorerは、AWSリソースの使用量やコストをグラフで視覚化し、データを詳細に分析できるサービスです。例えば、EC2やRDSなどのサービスごとに使用状況やコストを詳細に分析し、使用量の変化を時間軸で分析したり、コスト増加の原因を特定するグラフを作成することが可能です。\n\nAWS Cost Explorerを活用することで、EC2インスタンスが大きすぎないか、使用率が低いリソースがないか、コスト最適化できる箇所はないか等を確認し、ワークロードに対して適切なサイズへ調整する「適切なサイジング」を実現できます。\n\nしたがって、正解は\n・適切なサイジング\nです。\n\nその他の選択肢については、以下のとおりです。\n\n・マイクロサービスアーキテクチャ\nマイクロサービスアーキテクチャは、システムを複数の小さな独立したコンポーネントに分割して設計する手法です。Cost Explorerの機能とは無関係なので、誤りです。\n\n・ビジネスの俊敏性\nビジネスの俊敏性とは、変化する状況に即座に適応し、競争力を維持・強化する能力を指します。AWS利用全般のメリットであり、Cost Explorer固有のことではないので、誤りです。\n\n・オペレーショナルエクセレンス\n「運用上の優秀性（オペレーショナルエクセレンス）」は、Well-Architected Frameworkの6本の柱のうちの1つで、運用状況を把握し、業務手順を改善しながら、効率的にシステムを運用するためのガイドラインです。Cost Explorer単体で直接実現できることではないので、誤りです。",
+      "studyTextSections": [
+        {
+          "title": "AWS Cost Explorer, AWS Budgets",
+          "targetId": "study_text_collapse_question_reference_2591",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "【コスト最適化】"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "Well-Architected Frameworkの設計原則の一つである「コスト最適化」では、求められるシステムに必要なAWSサービスを最小限の費用で利用するための推奨事項が記載されています。コストを最適化するには、どのサービスにどれだけのコストがかかっているかを把握し、将来的にどれくらいのコストがかかるかを予測することが重要です。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "【AWS Cost Explorer】"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "AWS Cost Explorerは、AWSリソースの使用量やコストをグラフで視覚化し、データを詳細に分析できるサービスです。例えば、EC2やRDSなどのサービスごとに使用状況やコストを詳細に分析し、使用量の変化を時間軸で分析したり、コスト増加の原因を特定するグラフを作成することが可能です。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "■可視化・分析"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "過去13ヶ月分のコストデータをグラフで確認できます。デフォルトで用意されているレポートには、よく使用されるグラフ構成が含まれており、ユーザーはすぐに分析を始めることができます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[デフォルトで用意されているレポート]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/28071.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28071.jpg",
+              "dataSourceId": "28071",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[サービスごとの月別使用料推移（Monthly costs by serviceレポート）の例]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/28064.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28064.jpg",
+              "dataSourceId": "28064",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "上記は、サービスごとの月別使用料を確認できるレポートです。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "レポートは日次や月次で作成可能で、毎月のコストの推移を把握したり、課金額が高いユーザーを特定して利用状況を見直すなどの分析が行えます。また、フィルタリング機能を使うことで、サービスごとやアベイラビリティーゾーンごとの料金など、より詳細な分析を行うこともできます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "■予測"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "過去の使用状況を分析し、将来のコストを予測することができます。この機能を活用することで、将来的な予算計画が立てやすくなります。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[今後12か月のコスト予測グラフの例]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/28065.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28065.jpg",
+              "dataSourceId": "28065",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "予測の範囲は、1か月後から最大12か月後までです。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "【コスト配分タグ】"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "コスト配分タグは、AWSリソースのコスト管理と追跡を効率化するための機能です。タグはキーと値から構成され、リソースにタグ付けすることで、コストをプロジェクト、部門、チーム、環境（開発、テスト、本番）などのカテゴリーに分類できます。また、AWS Cost Explorerでタグごとのコストレポートを作成できるので、詳細なコスト分析を行えます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[タグごとのコスト可視化の例]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/28066.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28066.jpg",
+              "dataSourceId": "28066",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "【AWS Budgets】"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "AWS Budgetsは、AWSの各サービスの使用状況を監視し、設定した金額や使用状況のしきい値に近づいたり超えた場合にアラートやアクションを実行するサービスです。アラートはメールやAmazon SNSの通知で受け取ることができます。また、しきい値を超えた時のアクションとして、特定のEC2インスタンス、RDSインスタンスの停止設定などが可能で、これによりさらなるコスト発生を抑制できます。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[Budgetsのコンソール画面]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/28067.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28067.jpg",
+              "dataSourceId": "28067",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[予算超過時のメール通知]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/28068.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28068.jpg",
+              "dataSourceId": "28068",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "【AWS Pricing Calculator】"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "AWS Pricing Calculator（料金見積りツール）は、AWSの各サービスについて事前にコスト見積もりを行うツールです。必要な設定を入力することで、個々のサービスや複数サービスの組み合わせに基づいた総コストを計算できます。このツールは無料で提供されており、AWSアカウントがなくても利用可能です。例えば、オンプレミス環境からAWSへの移行コストを事前に評価したい場合や、異なるリージョンでのサーバー追加にかかる費用などを見積もりたい時に便利です。"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[見積もり作成画面]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/28069.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28069.jpg",
+              "dataSourceId": "28069",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "text",
+              "text": "[料金確認画面]"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "image",
+              "src": "/static/question_subjects/76/question_images/28070.jpg",
+              "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28070.jpg",
+              "dataSourceId": "28070",
+              "alt": "",
+              "className": "js-image"
+            },
+            {
+              "type": "linebreak"
+            },
+            {
+              "type": "link",
+              "text": "上に戻る",
+              "href": "#study_text_question_reference_2591",
+              "absoluteHref": "https://mondai.ping-t.com/#study_text_question_reference_2591"
+            }
+          ]
+        }
+      ],
+      "referenceUrls": [
+        {
+          "title": "",
+          "url": "https://aws.amazon.com/jp/aws-cost-management/aws-cost-explorer/",
+          "absoluteUrl": "https://aws.amazon.com/jp/aws-cost-management/aws-cost-explorer/"
+        },
+        {
+          "title": "AWS「AWS Cost Explorer（AWS のコストと使用量を経時的に可視化、把握、管理）」",
+          "url": "https://aws.amazon.com/jp/aws-cost-management/aws-cost-explorer/",
+          "absoluteUrl": "https://aws.amazon.com/jp/aws-cost-management/aws-cost-explorer/"
+        },
+        {
+          "title": "",
+          "url": "https://docs.aws.amazon.com/ja_jp/cost-management/latest/userguide/ce-what-is.html",
+          "absoluteUrl": "https://docs.aws.amazon.com/ja_jp/cost-management/latest/userguide/ce-what-is.html"
+        },
+        {
+          "title": "AWS コスト管理 ユーザーガイド「AWS Cost Explorer を用いてコストを分析する」",
+          "url": "https://docs.aws.amazon.com/ja_jp/cost-management/latest/userguide/ce-what-is.html",
+          "absoluteUrl": "https://docs.aws.amazon.com/ja_jp/cost-management/latest/userguide/ce-what-is.html"
+        },
+        {
+          "title": "もどる (p)",
+          "url": "/question_subjects/76/question_sessions/44217830/progressing_questions/673792933/edit",
+          "absoluteUrl": "https://mondai.ping-t.com/question_subjects/76/question_sessions/44217830/progressing_questions/673792933/edit"
+        }
+      ]
+    },
+    "assets": [
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/28071.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28071.jpg",
+        "dataSourceId": "28071",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/28064.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28064.jpg",
+        "dataSourceId": "28064",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/28065.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28065.jpg",
+        "dataSourceId": "28065",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/28066.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28066.jpg",
+        "dataSourceId": "28066",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/28067.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28067.jpg",
+        "dataSourceId": "28067",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/28068.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28068.jpg",
+        "dataSourceId": "28068",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/28069.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28069.jpg",
+        "dataSourceId": "28069",
+        "alt": ""
+      },
+      {
+        "type": "image",
+        "src": "/static/question_subjects/76/question_images/28070.jpg",
+        "absoluteSrc": "https://mondai.ping-t.com/static/question_subjects/76/question_images/28070.jpg",
+        "dataSourceId": "28070",
+        "alt": ""
+      }
+    ]
+  }
+]
