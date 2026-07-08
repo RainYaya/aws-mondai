@@ -11,6 +11,7 @@ import { loadManifest, loadExamQuestions } from "@/lib/data-loader";
 import type { Question } from "@/lib/types";
 import { blocksToText } from "@/lib/helpers";
 import { QuestionDetailContent } from "@/components/question-detail-content";
+import { BookmarkButton } from "@/components/bookmark-button";
 import { notFound } from "next/navigation";
 
 // ─── Data loading ───────────────────────────────────────────────────────────
@@ -92,6 +93,8 @@ export default async function QuestionDetailPage({ params }: Props) {
           <span className="text-sm text-gray-400">
             ID: {question.metadata.questionId}
           </span>
+          <div className="flex-1" />
+          <BookmarkButton examId={examId} questionId={question.metadata.questionId} />
         </div>
       </div>
 
