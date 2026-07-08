@@ -1,6 +1,7 @@
 node_modules/
 .next/
 out/
+*.tsbuildinfo
 
 # Data files (sensitive / large)
 data/raw/
