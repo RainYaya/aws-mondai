@@ -2,7 +2,7 @@
   "exams": [
     {
       "id": "clf-c02",
-      "displayName": "AWS クラウドプラクティショナー(CLF-C02)",
+      "displayName": "CLF-C02",
       "originalName": "AWS クラウドプラクティショナー(CLF-C02)",
       "questionCount": 533,
       "topics": [
@@ -94,40 +94,58 @@
       ]
     },
     {
+      "id": "dea-c01",
+      "displayName": "DEA-C01",
+      "originalName": "AWS Data Engineer Associate (DEA-C01)",
+      "questionCount": 199,
+      "topics": []
+    },
+    {
       "id": "saa-c03",
       "displayName": "SAA-C03",
       "originalName": "AWS Solutions Architect Associate (SAA-C03) - Exam 1",
-      "questionCount": 1021,
+      "questionCount": 1040,
+      "topics": []
+    },
+    {
+      "id": "saa-pingt",
+      "displayName": "SAA-C03 (Ping-t)",
+      "originalName": "AWS ソリューションアーキテクト - アソシエイト(SAA-PINGT)",
+      "questionCount": 196,
       "topics": [
-        "ec2-instances",
-        "rds",
-        "aurora",
-        "dynamodb",
-        "s3-basics",
-        "kms",
-        "lambda",
-        "cloudwatch",
-        "api-gateway",
-        "vpc",
-        "alb",
-        "cloudfront",
-        "iam",
-        "direct-connect",
-        "fsx",
-        "ecs-fargate",
-        "sqs",
-        "route53",
-        "ec2-auto-scaling",
-        "sns",
-        "backup",
-        "nlb",
-        "eventbridge",
-        "elasticache",
-        "cloudtrail",
-        "vpn",
-        "waf"
+        "AWS App2Container",
+        "AWS Certificate Manager",
+        "AWS CloudFormation",
+        "AWS Directory Service",
+        "AWS Glue",
+        "AWS IAM",
+        "AWS MGN（Application Migration Service）",
+        "AWS Organizations",
+        "AWS Systems Manager",
+        "AWSでのワークロード検出",
+        "AWSの操作",
+        "AWSグローバルインフラストラクチャ",
+        "Amazon Athena",
+        "Amazon CloudWatch",
+        "Amazon DocumentDB",
+        "Amazon DynamoDB",
+        "Amazon EC2",
+        "Amazon EKS",
+        "Amazon EventBridge",
+        "Amazon Kinesis",
+        "Amazon MQ",
+        "Amazon Managed Service for Apache Flink",
+        "Amazon S3",
+        "Amazon SNS（Simple Notification Service）",
+        "Amazon VPC",
+        "Auto Scaling",
+        "EC2インスタンスの購入オプション",
+        "Elastic Load Balancing",
+        "Well-Architected Frameworkの概要",
+        "オンプレミスとクラウド",
+        "責任共有モデル"
       ]
     }
   ],
-  "updatedAt": "2026-07-08T23:12:01.458Z"
+  "updatedAt": "2026-07-10T02:46:47.346Z"
 }
