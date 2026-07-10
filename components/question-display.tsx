@@ -149,7 +149,7 @@ export function QuestionDisplay({ question, lang }: Props) {
       </section>
 
       {/* ── Study materials (collapsible) ── */}
-      {content.studyTextSections.length > 0 && (
+      {(content.studyTextSections ?? []).length > 0 && (
         <section className="rounded-lg border border-gray-200">
           <button
             type="button"
@@ -169,7 +169,7 @@ export function QuestionDisplay({ question, lang }: Props) {
           </button>
           {studyOpen && (
             <div className="border-t border-gray-200 px-4 py-3 space-y-4">
-              {content.studyTextSections.map((section, i) => (
+              {(content.studyTextSections ?? []).map((section, i) => (
                 <div key={i}>
                   <h4 className="mb-2 font-medium text-gray-800">
                     {lang === "ja" || !zhTranslation?.studyTextSections[i]?.title
@@ -189,7 +189,7 @@ export function QuestionDisplay({ question, lang }: Props) {
       )}
 
       {/* ── Reference URLs (collapsible) ── */}
-      {content.referenceUrls.length > 0 && (
+      {(content.referenceUrls ?? []).length > 0 && (
         <section className="rounded-lg border border-gray-200">
           <button
             type="button"
@@ -209,7 +209,7 @@ export function QuestionDisplay({ question, lang }: Props) {
           </button>
           {refsOpen && (
             <div className="border-t border-gray-200 px-4 py-3 space-y-2">
-              {content.referenceUrls.map((ref, i) => (
+              {(content.referenceUrls ?? []).map((ref, i) => (
                 <a
                   key={i}
                   href={ref.absoluteUrl || ref.url}

@@ -114,12 +114,12 @@ function buildOverlay(q: RawQuestion, translations: Record<string, string>): Tra
   // questionBlocks: translate text blocks where possible
   const questionBlocks: RichBlock[] = (c.questionBlocks || []).map((b) =>
     b.type === "text" && b.text
-      ? { type: "text", text: translations[textHash(b.text)] || b.text }
+      ? { type: "text" as const, text: translations[textHash(b.text)] || b.text }
       : cloneBlock(b),
   );
   // If no questionBlocks, create from questionText
   if (questionBlocks.length === 0 && c.questionText) {
-    questionBlocks.push({ type: "text", text: translations[textHash(c.questionText)] || c.questionText });
+    questionBlocks.push({ type: "text" as const, text: translations[textHash(c.questionText)] || c.questionText });
   }
 
   // choices
@@ -132,7 +132,7 @@ function buildOverlay(q: RawQuestion, translations: Record<string, string>): Tra
     );
     // If no choice blocks, create one from the choice text
     if (blocks.length === 0) {
-      blocks.push({ type: "text", text: translatedText });
+      blocks.push({ type: "text" as const, text: translatedText });
     }
     return { no: ch.no, text: translatedText, blocks };
   });
@@ -143,23 +143,23 @@ function buildOverlay(q: RawQuestion, translations: Record<string, string>): Tra
   const correctAnswerBlocks: RichBlock[] = correctChoice
     ? (correctChoice.blocks || []).map((b) =>
         b.type === "text" && b.text
-          ? { type: "text", text: translations[textHash(b.text)] || b.text }
+          ? { type: "text" as const, text: translations[textHash(b.text)] || b.text }
           : cloneBlock(b),
       )
     : [];
   if (correctAnswerBlocks.length === 0 && correctAnswerText) {
-    correctAnswerBlocks.push({ type: "text", text: correctAnswerText });
+    correctAnswerBlocks.push({ type: "text" as const, text: correctAnswerText });
   }
 
   // explanation
   const explanationText = translations[textHash(c.explanationText)] || c.explanationText || "";
   const explanationBlocks: RichBlock[] = (c.explanationBlocks || []).map((b) =>
     b.type === "text" && b.text
-      ? { type: "text", text: translations[textHash(b.text)] || b.text }
+      ? { type: "text" as const, text: translations[textHash(b.text)] || b.text }
       : cloneBlock(b),
   );
   if (explanationBlocks.length === 0 && explanationText) {
-    explanationBlocks.push({ type: "text", text: explanationText });
+    explanationBlocks.push({ type: "text" as const, text: explanationText });
   }
 
   // study text sections
@@ -167,7 +167,7 @@ function buildOverlay(q: RawQuestion, translations: Record<string, string>): Tra
     title: translations[textHash(s.title)] || s.title,
     blocks: s.blocks.map((b) =>
       b.type === "text" && b.text
-        ? { type: "text", text: translations[textHash(b.text)] || b.text }
+        ? { type: "text" as const, text: translations[textHash(b.text)] || b.text }
         : cloneBlock(b),
     ),
   }));

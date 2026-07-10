@@ -29,7 +29,7 @@ export function QuestionListContent({ examId, questions }: Props) {
   const allTopics = useMemo(() => {
     const topicSet = new Set<string>();
     for (const q of questions) {
-      for (const s of q.content.studyTextSections) {
+      for (const s of q.content.studyTextSections ?? []) {
         if (s.title) topicSet.add(s.title);
       }
     }
@@ -43,7 +43,7 @@ export function QuestionListContent({ examId, questions }: Props) {
     // Topic filter
     if (selectedTopic) {
       result = result.filter((q) =>
-        q.content.studyTextSections.some((s) => s.title === selectedTopic),
+        q.content.studyTextSections?.some((s) => s.title === selectedTopic) ?? false,
       );
     }
 
@@ -191,7 +191,7 @@ export function QuestionListContent({ examId, questions }: Props) {
           {pageQuestions.map((q, i) => {
             const globalIndex = (safePage - 1) * PAGE_SIZE + i + 1;
             const preview = blocksToText(q.content.questionBlocks).slice(0, 80);
-            const topics = q.content.studyTextSections.map((s) => s.title);
+            const topics = (q.content.studyTextSections ?? []).map((s) => s.title);
 
             return (
               <Link

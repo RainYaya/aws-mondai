@@ -11,7 +11,8 @@ import type { RichBlock } from "./types";
  * Extract plain text from a RichBlock[] array, collapsing whitespace.
  * Useful for search previews, prev/next labels, etc.
  */
-export function blocksToText(blocks: RichBlock[]): string {
+export function blocksToText(blocks: RichBlock[] | undefined | null): string {
+  if (!blocks) return "";
   return blocks
     .map((b) => (b.type === "text" ? b.text || "" : b.type === "linebreak" ? " " : ""))
     .join(" ")

@@ -17,8 +17,8 @@ import { useState, type CSSProperties } from "react";
 import type { LanguagePreference, RichBlock } from "@/lib/types";
 
 interface Props {
-  /** Primary language blocks (Japanese — from content.*) */
-  jaBlocks: RichBlock[];
+  /** Primary language blocks (Japanese — from content.*) — may be undefined */
+  jaBlocks?: RichBlock[];
   /** Translation blocks (Chinese — from translations.zh.*) — may be empty */
   zhBlocks?: RichBlock[];
   /** Current language mode */
@@ -41,12 +41,15 @@ export function RichBlockRenderer({
 }: Props) {
   const effectiveZh = zhBlocks && zhBlocks.length > 0 ? zhBlocks : undefined;
 
+  const safeJa = jaBlocks ?? [];
+  const safeZh = effectiveZh ?? [];
+
   if (lang === "ja" || !effectiveZh) {
     // Japanese-only or no translation available
     const Wrapper = inline ? "span" : "div";
     return (
       <Wrapper className={className} style={style}>
-        {jaBlocks.map((block, i) => (
+        {safeJa.map((block, i) => (
           <BlockRenderer key={i} block={block} />
         ))}
       </Wrapper>
@@ -58,9 +61,9 @@ export function RichBlockRenderer({
     const Wrapper = inline ? "span" : "div";
     return (
       <Wrapper className={className} style={style}>
-        {effectiveZh.length > 0
-          ? effectiveZh.map((block, i) => <BlockRenderer key={i} block={block} />)
-          : jaBlocks.map((block, i) => <BlockRenderer key={i} block={block} />)}
+        {safeZh.length > 0
+          ? safeZh.map((block, i) => <BlockRenderer key={i} block={block} />)
+          : safeJa.map((block, i) => <BlockRenderer key={i} block={block} />)}
       </Wrapper>
     );
   }
@@ -75,7 +78,7 @@ export function RichBlockRenderer({
         ))}
       </div>
       <div className="mt-1 text-sm leading-relaxed text-gray-500 [&_img]:my-2">
-        {jaBlocks.map((block, i) => (
+        {safeJa.map((block, i) => (
           <BlockRenderer key={i} block={block} />
         ))}
       </div>
