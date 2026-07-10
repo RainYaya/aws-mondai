@@ -14,7 +14,8 @@
     "translate": "tsx --env-file=.env scripts/translate.ts",
     "download-images": "tsx --env-file=.env scripts/download-images.ts",
     "adapt": "tsx scripts/adapt-english.ts",
-    "merge": "tsx --env-file=.env scripts/translate-and-merge.ts"
+    "merge": "tsx --env-file=.env scripts/translate-and-merge.ts",
+    "adapt-quiz": "tsx scripts/adapt-quiz-results.ts"
   },
   "dependencies": {
     "next": "^15.0.0",
