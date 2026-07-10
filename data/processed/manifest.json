@@ -92,6 +92,41 @@
         "責任共有モデル",
         "運用上の優秀性の柱"
       ]
+    },
+    {
+      "id": "saa-c03",
+      "displayName": "SAA-C03",
+      "originalName": "AWS Solutions Architect Associate (SAA-C03) - Exam 1",
+      "questionCount": 1021,
+      "topics": [
+        "ec2-instances",
+        "rds",
+        "aurora",
+        "dynamodb",
+        "s3-basics",
+        "kms",
+        "lambda",
+        "cloudwatch",
+        "api-gateway",
+        "vpc",
+        "alb",
+        "cloudfront",
+        "iam",
+        "direct-connect",
+        "fsx",
+        "ecs-fargate",
+        "sqs",
+        "route53",
+        "ec2-auto-scaling",
+        "sns",
+        "backup",
+        "nlb",
+        "eventbridge",
+        "elasticache",
+        "cloudtrail",
+        "vpn",
+        "waf"
+      ]
     }
   ],
   "updatedAt": "2026-07-08T23:12:01.458Z"

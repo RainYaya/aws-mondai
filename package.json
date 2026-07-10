@@ -12,7 +12,8 @@
     "copy-data": "tsx scripts/copy-data.ts",
     "process": "tsx --env-file=.env scripts/process.ts",
     "translate": "tsx --env-file=.env scripts/translate.ts",
-    "download-images": "tsx --env-file=.env scripts/download-images.ts"
+    "download-images": "tsx --env-file=.env scripts/download-images.ts",
+    "adapt": "tsx scripts/adapt-english.ts"
   },
   "dependencies": {
     "next": "^15.0.0",
